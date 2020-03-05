@@ -1,0 +1,24 @@
+{
+  "group": "world_trigger_craft",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:dye",
+      "data": 2
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 2
+    },
+    {
+      "item": "world_trigger_craft:trigger_blueprint"
+    }
+  ],
+  "result": {
+    "item": "world_trigger_craft:triggercircuit",
+    "count": 1
+  }
+}
