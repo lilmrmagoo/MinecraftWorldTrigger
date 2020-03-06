@@ -1,0 +1,7 @@
+{
+  "_fv": 6,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">Player goes to bed</field><next><block type=\"entity_nbt_num_set\"><value name=\"tagName\"><block type=\"text\"><field name=\"TEXT\">playerspawnx</field></block></value><value name=\"tagValue\"><block type=\"coord_x\"/></value><next><block type=\"entity_nbt_num_set\"><value name=\"tagName\"><block type=\"text\"><field name=\"TEXT\">playerspawny</field></block></value><value name=\"tagValue\"><block type=\"coord_y\"/></value><next><block type=\"entity_nbt_num_set\"><value name=\"tagName\"><block type=\"text\"><field name=\"TEXT\">playerspawnz</field></block></value><value name=\"tagValue\"><block type=\"coord_z\"/></value></block></next></block></next></block></next></block></xml>"
+  }
+}

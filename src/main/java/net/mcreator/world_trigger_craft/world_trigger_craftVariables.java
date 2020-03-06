@@ -52,6 +52,7 @@ public class world_trigger_craftVariables {
 
 	public static class WorldVariables extends WorldSavedData {
 		public static final String DATA_NAME = "world_trigger_craft_worldvars";
+		public boolean TriggerONAnnouncement = true;
 		public WorldVariables() {
 			super(DATA_NAME);
 		}
@@ -62,10 +63,12 @@ public class world_trigger_craftVariables {
 
 		@Override
 		public void readFromNBT(NBTTagCompound nbt) {
+			TriggerONAnnouncement = nbt.getBoolean("TriggerONAnnouncement");
 		}
 
 		@Override
 		public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
+			nbt.setBoolean("TriggerONAnnouncement", TriggerONAnnouncement);
 			return nbt;
 		}
 

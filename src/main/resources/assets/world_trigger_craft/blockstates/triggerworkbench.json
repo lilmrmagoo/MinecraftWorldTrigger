@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "world_trigger_craft:triggerworkbench"
+    }
+  }
+}

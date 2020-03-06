@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "world_trigger_craft:blocks/triggerworkbenchtemp",
+    "up": "world_trigger_craft:blocks/triggerworkbenchtemp",
+    "north": "world_trigger_craft:blocks/triggerworkbenchtemp",
+    "east": "world_trigger_craft:blocks/triggerworkbenchtemp",
+    "south": "world_trigger_craft:blocks/triggerworkbenchtemp",
+    "west": "world_trigger_craft:blocks/triggerworkbenchtemp",
+    "particle": "world_trigger_craft:blocks/triggerworkbenchtemp"
+  }
+}

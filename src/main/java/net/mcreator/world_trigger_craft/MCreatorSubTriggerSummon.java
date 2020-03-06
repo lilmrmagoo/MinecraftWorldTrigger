@@ -7,7 +7,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.init.Blocks;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.Entity;
@@ -36,10 +35,6 @@ public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModEle
 			System.err.println("Failed to load dependency z for procedure MCreatorSubTriggerSummon!");
 			return;
 		}
-		if (dependencies.get("itemstack") == null) {
-			System.err.println("Failed to load dependency itemstack for procedure MCreatorSubTriggerSummon!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			System.err.println("Failed to load dependency world for procedure MCreatorSubTriggerSummon!");
 			return;
@@ -48,11 +43,14 @@ public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModEle
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		World world = (World) dependencies.get("world");
-		if (((((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("subtriggerShape") : -1) > 0)
-				&& (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-						.getItem() == new ItemStack(Blocks.AIR, (int) (1)).getItem()))) {
+		if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
+						.getDouble("subtriggerShape")
+				: -1) == 1)) {
+			if (entity instanceof EntityPlayer)
+				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity),
+						(((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY).copy()));
 			if (!world.isRemote && world.getMinecraftServer() != null) {
 				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
 					@Override
@@ -89,52 +87,9 @@ public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModEle
 					public Vec3d getPositionVector() {
 						return new Vec3d(x, y, z);
 					}
-				}, "/replaceitem entity @p slot.weapon,offhand minecraft:air 1 0");
+				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:raygusttrigger 1 0");
 			}
-		} else {
-			if ((((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("subtriggerShape") : -1) == 1)) {
-				if (entity instanceof EntityPlayer)
-					ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity),
-							(((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY).copy()));
-				if (!world.isRemote && world.getMinecraftServer() != null) {
-					world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-						@Override
-						public String getName() {
-							return "";
-						}
-
-						@Override
-						public boolean canUseCommand(int permission, String command) {
-							return true;
-						}
-
-						@Override
-						public World getEntityWorld() {
-							return world;
-						}
-
-						@Override
-						public MinecraftServer getServer() {
-							return world.getMinecraftServer();
-						}
-
-						@Override
-						public boolean sendCommandFeedback() {
-							return false;
-						}
-
-						@Override
-						public BlockPos getPosition() {
-							return new BlockPos((int) x, (int) y, (int) z);
-						}
-
-						@Override
-						public Vec3d getPositionVector() {
-							return new Vec3d(x, y, z);
-						}
-					}, "/replaceitem entity @p slot.weapon,offhand minecraft:air 1 0");
-				}
-			}
+			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 20));
 		}
 	}
 }

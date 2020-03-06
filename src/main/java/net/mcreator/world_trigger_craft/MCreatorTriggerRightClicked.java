@@ -1,6 +1,9 @@
 package net.mcreator.world_trigger_craft;
 
+import net.minecraftforge.fml.common.FMLCommonHandler;
+
 import net.minecraft.world.World;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.server.MinecraftServer;
@@ -33,10 +36,6 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 			System.err.println("Failed to load dependency z for procedure MCreatorTriggerRightClicked!");
 			return;
 		}
-		if (dependencies.get("itemstack") == null) {
-			System.err.println("Failed to load dependency itemstack for procedure MCreatorTriggerRightClicked!");
-			return;
-		}
 		if (dependencies.get("world") == null) {
 			System.err.println("Failed to load dependency world for procedure MCreatorTriggerRightClicked!");
 			return;
@@ -45,7 +44,6 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 		int x = (int) dependencies.get("x");
 		int y = (int) dependencies.get("y");
 		int z = (int) dependencies.get("z");
-		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		World world = (World) dependencies.get("world");
 		double triggershape = 0;
 		double subtriggershape = 0;
@@ -56,120 +54,183 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 		double optTrigger5 = 0;
 		double optTrigger6 = 0;
 		double optTrigger7 = 0;
-		triggershape = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("triggerShape") : -1);
-		subtriggershape = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("subtriggerShape") : -1);
-		optTrigger1 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger1") : -1);
-		optTrigger2 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger2") : -1);
-		optTrigger3 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger3") : -1);
-		optTrigger4 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger4") : -1);
-		optTrigger5 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger5") : -1);
-		optTrigger6 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger6") : -1);
-		optTrigger7 = (double) ((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("optTrigger7") : -1);
-		if (((((itemstack).hasTagCompound() ? (itemstack).getTagCompound().getDouble("triggerShape") : -1) == 1)
-				&& (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-						.getItem() == (itemstack).getItem()))) {
-			if (!world.isRemote && world.getMinecraftServer() != null) {
-				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-					@Override
-					public String getName() {
-						return "";
+		if ((!(world.isRemote))) {
+			if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.getItem() == new ItemStack(MCreatorTrigger.block, (int) (1)).getItem())) {
+				triggershape = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("triggerShape")
+								: -1);
+				subtriggershape = (double) (((entity instanceof EntityLivingBase)
+						? ((EntityLivingBase) entity).getHeldItemMainhand()
+						: ItemStack.EMPTY).hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("subtriggerShape")
+								: -1);
+				optTrigger1 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger1")
+								: -1);
+				optTrigger2 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger2")
+								: -1);
+				optTrigger3 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger3")
+								: -1);
+				optTrigger4 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger4")
+								: -1);
+				optTrigger5 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger5")
+								: -1);
+				optTrigger6 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger6")
+								: -1);
+				optTrigger7 = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.hasTagCompound()
+								? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+										.getTagCompound().getDouble("optTrigger7")
+								: -1);
+				entity.getEntityData().setBoolean("trionBody", (true));
+				if ((((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+						? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+								.getTagCompound().getDouble("triggerShape")
+						: -1) == 1) && ((entity.getEntityData().getDouble("trion")) >= 21))) {
+					if ((world_trigger_craftVariables.WorldVariables.get(world).TriggerONAnnouncement)) {
+						{
+							MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
+							if (mcserv != null)
+								mcserv.getPlayerList().sendMessage(new TextComponentString(
+										(("<") + "" + ((entity.getDisplayName().getFormattedText())) + "" + ("> Trigger ON!"))));
+						}
 					}
+					if (!world.isRemote && world.getMinecraftServer() != null) {
+						world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+							@Override
+							public String getName() {
+								return "";
+							}
 
-					@Override
-					public boolean canUseCommand(int permission, String command) {
-						return true;
-					}
+							@Override
+							public boolean canUseCommand(int permission, String command) {
+								return true;
+							}
 
-					@Override
-					public World getEntityWorld() {
-						return world;
-					}
+							@Override
+							public World getEntityWorld() {
+								return world;
+							}
 
-					@Override
-					public MinecraftServer getServer() {
-						return world.getMinecraftServer();
-					}
+							@Override
+							public MinecraftServer getServer() {
+								return world.getMinecraftServer();
+							}
 
-					@Override
-					public boolean sendCommandFeedback() {
-						return false;
-					}
+							@Override
+							public boolean sendCommandFeedback() {
+								return false;
+							}
 
-					@Override
-					public BlockPos getPosition() {
-						return new BlockPos((int) x, (int) y, (int) z);
-					}
+							@Override
+							public BlockPos getPosition() {
+								return new BlockPos((int) x, (int) y, (int) z);
+							}
 
-					@Override
-					public Vec3d getPositionVector() {
-						return new Vec3d(x, y, z);
+							@Override
+							public Vec3d getPositionVector() {
+								return new Vec3d(x, y, z);
+							}
+						}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:raygusttrigger 1 0");
 					}
-				}, "/replaceitem entity @p slot.weapon.mainhand minecraft:air 1 0");
+					entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 20));
+					{
+						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						$_dependencies.put("entity", entity);
+						$_dependencies.put("x", x);
+						$_dependencies.put("y", y);
+						$_dependencies.put("z", z);
+						$_dependencies.put("world", world);
+						MCreatorSubTriggerSummon.executeProcedure($_dependencies);
+					}
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("triggerShape", (triggershape));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("subtriggerShape", (subtriggershape));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger1", (optTrigger1));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger2", (optTrigger2));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger3", (optTrigger3));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger4", (optTrigger4));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger5", (optTrigger5));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger6", (optTrigger6));
+				}
+				{
+					ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (!_stack.hasTagCompound())
+						_stack.setTagCompound(new NBTTagCompound());
+					_stack.getTagCompound().setDouble("optTrigger7", (optTrigger7));
+				}
+			} else if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.getItem() == new ItemStack(MCreatorRaygustTrigger.block, (int) (1)).getItem())) {
+				{
+					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					$_dependencies.put("entity", entity);
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					MCreatorTriggerOFF.executeProcedure($_dependencies);
+				}
 			}
-			{
-				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("itemstack", itemstack);
-				$_dependencies.put("world", world);
-				MCreatorSubTriggerSummon.executeProcedure($_dependencies);
-			}
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("triggerShape", (triggershape));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("subtriggerShape", (subtriggershape));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger1", (optTrigger1));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger2", (optTrigger2));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger3", (optTrigger3));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger4", (optTrigger4));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger5", (optTrigger5));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger6", (optTrigger6));
-		}
-		{
-			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
-			if (!_stack.hasTagCompound())
-				_stack.setTagCompound(new NBTTagCompound());
-			_stack.getTagCompound().setDouble("optTrigger7", (optTrigger7));
 		}
 	}
 }

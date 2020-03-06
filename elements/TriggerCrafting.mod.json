@@ -1,0 +1,166 @@
+{
+  "_fv": 6,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 400,
+    "height": 500,
+    "renderBgLayer": true,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "text": "Assemble",
+          "onClick": {
+            "name": "TriggerCraftingAssemble"
+          },
+          "width": 160,
+          "height": 40,
+          "name": "Assemble",
+          "x": 462,
+          "y": 438
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Trigger name",
+          "width": 240,
+          "height": 40,
+          "name": "CustomName",
+          "x": 381,
+          "y": 393
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "id": 0,
+          "name": "Slot #0",
+          "x": 399,
+          "y": 438
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:Triggercase"
+          },
+          "id": 1,
+          "name": "Slot #1",
+          "x": 246,
+          "y": 105
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 2,
+          "name": "Slot #2",
+          "x": 318,
+          "y": 168
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 3,
+          "name": "Slot #3",
+          "x": 318,
+          "y": 42
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 4,
+          "name": "Slot #4",
+          "x": 372,
+          "y": 168
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 5,
+          "name": "Slot #5",
+          "x": 426,
+          "y": 168
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 6,
+          "name": "Slot #6",
+          "x": 480,
+          "y": 168
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 7,
+          "name": "Slot #7",
+          "x": 372,
+          "y": 42
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 8,
+          "name": "Slot #8",
+          "x": 426,
+          "y": 42
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 9,
+          "name": "Slot #9",
+          "x": 480,
+          "y": 42
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": "CUSTOM:TriggerCircuit"
+          },
+          "id": 10,
+          "name": "Slot #10",
+          "x": 399,
+          "y": 105
+        }
+      }
+    ]
+  }
+}
