@@ -6,6 +6,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.MinecraftForge;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.Entity;
 
 @Elementsworld_trigger_craft.ModElement.Tag
@@ -19,11 +21,26 @@ public class MCreatorPlayerTick extends Elementsworld_trigger_craft.ModElement {
 			System.err.println("Failed to load dependency entity for procedure MCreatorPlayerTick!");
 			return;
 		}
+		if (dependencies.get("world") == null) {
+			System.err.println("Failed to load dependency world for procedure MCreatorPlayerTick!");
+			return;
+		}
 		Entity entity = (Entity) dependencies.get("entity");
+		World world = (World) dependencies.get("world");
 		if (((entity.getEntityData().getBoolean("trionBody")) == (false))) {
-			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) + 0.025));
+			entity.getEntityData().setDouble("triongen", ((entity.getEntityData().getDouble("triongen")) + 0.025));
 		} else if (((entity.getEntityData().getBoolean("trionBody")) == (true))) {
-			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) + 0.003));
+			entity.getEntityData().setDouble("triongen", ((entity.getEntityData().getDouble("triongen")) + 0.003));
+		}
+		if (((entity.getEntityData().getDouble("triongen")) >= 1)) {
+			entity.getEntityData().setDouble("triongen", 0);
+			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) + 1));
+		}
+		if ((entity.getEntityData().getBoolean("trionBody"))) {
+			if (entity instanceof EntityPlayer && !world.isRemote) {
+				((EntityPlayer) entity).sendStatusMessage(new TextComponentString((("trion ") + "" + ((entity.getEntityData().getDouble("trion"))))),
+						(true));
+			}
 		}
 	}
 

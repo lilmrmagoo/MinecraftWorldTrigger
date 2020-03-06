@@ -25,7 +25,7 @@ public class MCreatorTrionOverlay extends Elementsworld_trigger_craft.ModElement
 		MinecraftForge.EVENT_BUS.register(new GUIRenderEventClass());
 	}
 	public static class GUIRenderEventClass {
-		@SubscribeEvent(priority = EventPriority.NORMAL)
+		@SubscribeEvent(priority = EventPriority.HIGHEST)
 		@SideOnly(Side.CLIENT)
 		public void eventHandler(RenderGameOverlayEvent event) {
 			if (!event.isCancelable() && event.getType() == RenderGameOverlayEvent.ElementType.HELMET) {
@@ -36,9 +36,9 @@ public class MCreatorTrionOverlay extends Elementsworld_trigger_craft.ModElement
 				int x = (int) entity.posX;
 				int y = (int) entity.posY;
 				int z = (int) entity.posZ;
-				if ((entity.getEntityData().getBoolean("trionBody"))) {
-					Minecraft.getMinecraft().fontRenderer.drawString("" + ((int) entity.getEntityData().getDouble("Trion")) + "", posX + 114,
-							posY + 103, -1);
+				if ((false)) {
+					Minecraft.getMinecraft().fontRenderer.drawString("" + ((int) entity.getEntityData().getDouble("trion")) + " / 100", posX + 115,
+							posY + 102, -1);
 				}
 			}
 		}

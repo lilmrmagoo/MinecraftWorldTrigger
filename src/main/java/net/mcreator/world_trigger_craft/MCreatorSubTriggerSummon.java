@@ -50,7 +50,7 @@ public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModEle
 				: -1) == 1)) {
 			if (entity instanceof EntityPlayer)
 				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity),
-						(((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY).copy()));
+						((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY));
 			if (!world.isRemote && world.getMinecraftServer() != null) {
 				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
 					@Override

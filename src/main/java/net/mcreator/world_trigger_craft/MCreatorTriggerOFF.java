@@ -137,7 +137,7 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 			}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:trigger 1 0");
 		}
 		entity.getEntityData().setBoolean("trionBody", (false));
-		if ((OreDictionary.containsMatch(false, OreDictionary.getOres("worldtrigger"),
+		if ((OreDictionary.containsMatch(false, OreDictionary.getOres("worldtriggertag"),
 				((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY)))) {
 			if (!world.isRemote && world.getMinecraftServer() != null) {
 				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
@@ -177,6 +177,14 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 					}
 				}, "replaceitem entity @p slot.weapon.offhand minecraft:air 1 0");
 			}
+		}
+		{
+			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+			$_dependencies.put("x", x);
+			$_dependencies.put("y", y);
+			$_dependencies.put("z", z);
+			$_dependencies.put("world", world);
+			MCreatorClearAllTriggers.executeProcedure($_dependencies);
 		}
 		{
 			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);

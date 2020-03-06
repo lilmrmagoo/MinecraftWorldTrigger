@@ -2,20 +2,20 @@
   "_fv": 6,
   "_type": "overlay",
   "definition": {
-    "priority": "NORMAL",
-    "conditionxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"condition_input\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"CONDITION\"><block type=\"entity_nbt_logic_get\"><value name=\"tagName\"><block type=\"text\"><field name=\"TEXT\">trionBody</field></block></value></block></value></block></xml>",
+    "priority": "HIGHEST",
+    "conditionxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"condition_input\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"CONDITION\"><block type=\"logic_boolean\"><field name=\"BOOL\">FALSE</field></block></value></block></xml>",
     "components": [
       {
         "type": "label",
         "data": {
-          "text": "<ENBT:integer:Trion>",
+          "text": "<ENBT:integer:trion> / 100",
           "color": {
             "value": -1,
             "falpha": 0.0
           },
-          "name": "<ENBT:integer:Trion>",
-          "x": 654,
-          "y": 446
+          "name": "<ENBT:integer:trion> / 100",
+          "x": 655,
+          "y": 444
         }
       }
     ],
