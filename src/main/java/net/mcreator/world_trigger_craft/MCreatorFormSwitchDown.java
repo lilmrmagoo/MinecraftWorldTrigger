@@ -1,7 +1,5 @@
 package net.mcreator.world_trigger_craft;
 
-import net.minecraftforge.oredict.OreDictionary;
-
 import net.minecraft.world.World;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.BlockPos;
@@ -13,30 +11,30 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSender;
 
 @Elementsworld_trigger_craft.ModElement.Tag
-public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
-	public MCreatorTriggerOFF(Elementsworld_trigger_craft instance) {
-		super(instance, 25);
+public class MCreatorFormSwitchDown extends Elementsworld_trigger_craft.ModElement {
+	public MCreatorFormSwitchDown(Elementsworld_trigger_craft instance) {
+		super(instance, 53);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
-			System.err.println("Failed to load dependency entity for procedure MCreatorTriggerOFF!");
+			System.err.println("Failed to load dependency entity for procedure MCreatorFormSwitchDown!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
-			System.err.println("Failed to load dependency x for procedure MCreatorTriggerOFF!");
+			System.err.println("Failed to load dependency x for procedure MCreatorFormSwitchDown!");
 			return;
 		}
 		if (dependencies.get("y") == null) {
-			System.err.println("Failed to load dependency y for procedure MCreatorTriggerOFF!");
+			System.err.println("Failed to load dependency y for procedure MCreatorFormSwitchDown!");
 			return;
 		}
 		if (dependencies.get("z") == null) {
-			System.err.println("Failed to load dependency z for procedure MCreatorTriggerOFF!");
+			System.err.println("Failed to load dependency z for procedure MCreatorFormSwitchDown!");
 			return;
 		}
 		if (dependencies.get("world") == null) {
-			System.err.println("Failed to load dependency world for procedure MCreatorTriggerOFF!");
+			System.err.println("Failed to load dependency world for procedure MCreatorFormSwitchDown!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -104,10 +102,8 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 						? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 								.getTagCompound().getDouble("triggercolor")
 						: -1);
-		if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
-				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
-						.getDouble("triggercolor")
-				: -1) == 0)) {
+		if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(MCreatorScorpionKazamaTrigger.block, (int) (1)).getItem())) {
 			if (!world.isRemote && world.getMinecraftServer() != null) {
 				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
 					@Override
@@ -144,12 +140,10 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 					public Vec3d getPositionVector() {
 						return new Vec3d(x, y, z);
 					}
-				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:trigger 1 0");
+				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:scorpiondefaulttrigger 1 0 {AttributeModifiers:[{AttributeName:\"generic.attackSpeed\",Name:\"generic.attackSpeed\",Amount:0.3,Operation:0,UUIDLeast:480311,UUIDMost:980681,Slot:\"mainhand\"}]}");
 			}
-		} else if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
-				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
-						.getDouble("triggercolor")
-				: -1) == 1)) {
+		} else if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(MCreatorScorpionDefaultTrigger.block, (int) (1)).getItem())) {
 			if (!world.isRemote && world.getMinecraftServer() != null) {
 				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
 					@Override
@@ -186,54 +180,11 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 					public Vec3d getPositionVector() {
 						return new Vec3d(x, y, z);
 					}
-				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:greentrigger 1 0");
-			}
-		} else if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
-				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
-						.getDouble("triggercolor")
-				: -1) == 2)) {
-			if (!world.isRemote && world.getMinecraftServer() != null) {
-				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-					@Override
-					public String getName() {
-						return "";
-					}
-
-					@Override
-					public boolean canUseCommand(int permission, String command) {
-						return true;
-					}
-
-					@Override
-					public World getEntityWorld() {
-						return world;
-					}
-
-					@Override
-					public MinecraftServer getServer() {
-						return world.getMinecraftServer();
-					}
-
-					@Override
-					public boolean sendCommandFeedback() {
-						return false;
-					}
-
-					@Override
-					public BlockPos getPosition() {
-						return new BlockPos((int) x, (int) y, (int) z);
-					}
-
-					@Override
-					public Vec3d getPositionVector() {
-						return new Vec3d(x, y, z);
-					}
-				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:redtrigger 1 0");
+				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:scorpionkazamatrigger 1 0 {AttributeModifiers:[{AttributeName:\"generic.attackSpeed\",Name:\"generic.attackSpeed\",Amount:0.3,Operation:0,UUIDLeast:480311,UUIDMost:980681,Slot:\"mainhand\"}]}");
 			}
 		}
-		entity.getEntityData().setBoolean("trionBody", (false));
-		if ((OreDictionary.containsMatch(false, OreDictionary.getOres("worldtriggertag"),
-				((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY)))) {
+		if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(MCreatorScorpionKazamaTrigger.block, (int) (1)).getItem())) {
 			if (!world.isRemote && world.getMinecraftServer() != null) {
 				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
 					@Override
@@ -270,17 +221,48 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 					public Vec3d getPositionVector() {
 						return new Vec3d(x, y, z);
 					}
-				}, "replaceitem entity @p slot.weapon.offhand minecraft:air 1 0");
+				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:scorpionkdefaulttrigger 1 0 {AttributeModifiers:[{AttributeName:\"generic.attackSpeed\",Name:\"generic.attackSpeed\",Amount:0.3,Operation:0,UUIDLeast:480311,UUIDMost:980681,Slot:\"offhand\"}]}");
 			}
-		}
-		entity.getEntityData().setBoolean("bailoutactive", (false));
-		{
-			java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-			$_dependencies.put("x", x);
-			$_dependencies.put("y", y);
-			$_dependencies.put("z", z);
-			$_dependencies.put("world", world);
-			MCreatorClearAllTriggers.executeProcedure($_dependencies);
+		} else if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(MCreatorScorpionDefaultTrigger.block, (int) (1)).getItem())) {
+			if (!world.isRemote && world.getMinecraftServer() != null) {
+				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public BlockPos getPosition() {
+						return new BlockPos((int) x, (int) y, (int) z);
+					}
+
+					@Override
+					public Vec3d getPositionVector() {
+						return new Vec3d(x, y, z);
+					}
+				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:scorpionkazamatrigger 1 0 {AttributeModifiers:[{AttributeName:\"generic.attackSpeed\",Name:\"generic.attackSpeed\",Amount:0.3,Operation:0,UUIDLeast:480311,UUIDMost:980681,Slot:\"offhand\"}]}");
+			}
 		}
 		{
 			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);

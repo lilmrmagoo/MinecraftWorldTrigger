@@ -1,12 +1,8 @@
 {
-  "parent": "block/cube",
+  "parent": "world_trigger_craft:custom/triggreworkbench_temp",
   "textures": {
-    "down": "world_trigger_craft:blocks/triggerworkbenchtemp",
-    "up": "world_trigger_craft:blocks/triggerworkbenchtemp",
-    "north": "world_trigger_craft:blocks/triggerworkbenchtemp",
-    "east": "world_trigger_craft:blocks/triggerworkbenchtemp",
-    "south": "world_trigger_craft:blocks/triggerworkbenchtemp",
-    "west": "world_trigger_craft:blocks/triggerworkbenchtemp",
-    "particle": "world_trigger_craft:blocks/triggerworkbenchtemp"
+    "all": "world_trigger_craft:blocks/trigger_workbench",
+    "particle": "world_trigger_craft:blocks/trigger_workbench",
+    "0": "world_trigger_craft:blocks/trigger_workbench"
   }
 }

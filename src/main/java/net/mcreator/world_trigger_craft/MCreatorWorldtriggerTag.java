@@ -17,5 +17,6 @@ public class MCreatorWorldtriggerTag extends Elementsworld_trigger_craft.ModElem
 		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorRaygustTrigger.block, (int) (1)));
 		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorKogetsuTrigger.block, (int) (1)));
 		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorScorpionKazamaTrigger.block, (int) (1)));
+		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorScorpionDefaultTrigger.block, (int) (1)));
 	}
 }

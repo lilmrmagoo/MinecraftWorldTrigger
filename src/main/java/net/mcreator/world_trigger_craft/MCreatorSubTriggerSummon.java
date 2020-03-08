@@ -179,7 +179,7 @@ public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModEle
 					public Vec3d getPositionVector() {
 						return new Vec3d(x, y, z);
 					}
-				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:scorpionkazamatrigger 1 0");
+				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:scorpiondefaulttrigger 1 0 {AttributeModifiers:[{AttributeName:\"generic.attackSpeed\",Name:\"generic.attackSpeed\",Amount:0.3,Operation:0,UUIDLeast:480311,UUIDMost:980681,Slot:\"offhand\"}]}");
 			}
 			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 10));
 		}

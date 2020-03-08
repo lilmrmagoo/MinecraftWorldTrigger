@@ -67,8 +67,13 @@ public class MCreatorTriggerWorkbench extends Elementsworld_trigger_craft.ModEle
 			setHardness(1F);
 			setResistance(10F);
 			setLightLevel(0F);
-			setLightOpacity(255);
+			setLightOpacity(0);
 			setCreativeTab(MCreatorWorldTriggerTab.tab);
+		}
+
+		@Override
+		public boolean isOpaqueCube(IBlockState state) {
+			return false;
 		}
 
 		@Override

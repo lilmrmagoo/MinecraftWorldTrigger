@@ -5,21 +5,12 @@
     "type": "Items",
     "items": [
       {
-        "value": "CUSTOM:RaygustTrigger"
-      },
-      {
-        "value": "CUSTOM:KogetsuTrigger"
-      },
-      {
         "value": "CUSTOM:ScorpionKazamaTrigger"
-      },
-      {
-        "value": "CUSTOM:ScorpionDefaultTrigger"
       }
     ],
     "blocks": [],
     "functions": [],
-    "name": "worldtriggertag",
+    "name": "formchangabletrigger",
     "namespace": "forge"
   }
 }

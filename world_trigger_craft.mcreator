@@ -514,7 +514,7 @@
       "type": "item",
       "sortid": 38,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {}
     },
     {
@@ -630,22 +630,6 @@
       "ids": {}
     },
     {
-      "name": "Dualattack",
-      "type": "procedure",
-      "sortid": 48,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "KogetsuChipRecipe",
       "type": "recipe",
       "sortid": 49,
@@ -692,6 +676,146 @@
       "compiles": true,
       "locked_code": false,
       "ids": {}
+    },
+    {
+      "name": "FormSwitchup",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FormSwitchDown",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FormChangableTrigger",
+      "type": "tag",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "FormAndBulletswapOnKeyPressed",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "int"
+          },
+          {
+            "name": "y",
+            "type": "int"
+          },
+          {
+            "name": "z",
+            "type": "int"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FormAndBulletswap",
+      "type": "keybind",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "ScorpionDefaultTrigger",
+      "type": "item",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "TriggerBreak",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -714,10 +838,12 @@
       "item.trigger_blueprint.name": "Trigger blueprint",
       "item.redtriggercase.name": "Trigger Case",
       "key.mcreator.triggeron": "Trigger ON!",
+      "item.scorpiondefaulttrigger.name": "Scorpion Trigger",
       "item.triggercase.name": "Trigger Case",
       "item.raygusttrigger.name": "Raygust Trigger",
       "item.blanktriggerchip.name": "Blank Trigger Chip",
       "item.redtrigger.name": "Trigger",
+      "key.mcreator.formandbulletswap": "Form And Bullet swap",
       "item.neighbourtech.name": "Neighbour Tech",
       "item.scorpionkazamatrigger.name": "Scorpion Trigger",
       "item.triggerchipraycast.name": "Trigger Chip Raycast",
