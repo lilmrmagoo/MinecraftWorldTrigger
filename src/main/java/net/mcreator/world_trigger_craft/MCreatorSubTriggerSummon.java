@@ -90,6 +90,98 @@ public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModEle
 				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:raygusttrigger 1 0");
 			}
 			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 20));
+		} else if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
+						.getDouble("subtriggerShape")
+				: -1) == 2)) {
+			if (entity instanceof EntityPlayer)
+				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity),
+						((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY));
+			if (!world.isRemote && world.getMinecraftServer() != null) {
+				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public BlockPos getPosition() {
+						return new BlockPos((int) x, (int) y, (int) z);
+					}
+
+					@Override
+					public Vec3d getPositionVector() {
+						return new Vec3d(x, y, z);
+					}
+				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:kogetsutrigger 1 0");
+			}
+			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 15));
+		} else if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
+						.getDouble("subtriggerShape")
+				: -1) == 3)) {
+			if (entity instanceof EntityPlayer)
+				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity),
+						((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemOffhand() : ItemStack.EMPTY));
+			if (!world.isRemote && world.getMinecraftServer() != null) {
+				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public BlockPos getPosition() {
+						return new BlockPos((int) x, (int) y, (int) z);
+					}
+
+					@Override
+					public Vec3d getPositionVector() {
+						return new Vec3d(x, y, z);
+					}
+				}, "replaceitem entity @p slot.weapon.offhand world_trigger_craft:scorpionkazamatrigger 1 0");
+			}
+			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 10));
 		}
 	}
 }

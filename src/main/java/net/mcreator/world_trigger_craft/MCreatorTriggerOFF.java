@@ -53,6 +53,7 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 		double optTrigger5 = 0;
 		double optTrigger6 = 0;
 		double optTrigger7 = 0;
+		double triggercolor = 0;
 		triggershape = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 				.hasTagCompound()
 						? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
@@ -98,43 +99,137 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 						? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 								.getTagCompound().getDouble("optTrigger7")
 						: -1);
-		if (!world.isRemote && world.getMinecraftServer() != null) {
-			world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
-				@Override
-				public String getName() {
-					return "";
-				}
+		triggercolor = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.hasTagCompound()
+						? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+								.getTagCompound().getDouble("triggercolor")
+						: -1);
+		if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
+						.getDouble("triggercolor")
+				: -1) == 0)) {
+			if (!world.isRemote && world.getMinecraftServer() != null) {
+				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
 
-				@Override
-				public boolean canUseCommand(int permission, String command) {
-					return true;
-				}
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
 
-				@Override
-				public World getEntityWorld() {
-					return world;
-				}
+					@Override
+					public World getEntityWorld() {
+						return world;
+					}
 
-				@Override
-				public MinecraftServer getServer() {
-					return world.getMinecraftServer();
-				}
+					@Override
+					public MinecraftServer getServer() {
+						return world.getMinecraftServer();
+					}
 
-				@Override
-				public boolean sendCommandFeedback() {
-					return false;
-				}
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
 
-				@Override
-				public BlockPos getPosition() {
-					return new BlockPos((int) x, (int) y, (int) z);
-				}
+					@Override
+					public BlockPos getPosition() {
+						return new BlockPos((int) x, (int) y, (int) z);
+					}
 
-				@Override
-				public Vec3d getPositionVector() {
-					return new Vec3d(x, y, z);
-				}
-			}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:trigger 1 0");
+					@Override
+					public Vec3d getPositionVector() {
+						return new Vec3d(x, y, z);
+					}
+				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:trigger 1 0");
+			}
+		} else if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
+						.getDouble("triggercolor")
+				: -1) == 1)) {
+			if (!world.isRemote && world.getMinecraftServer() != null) {
+				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public BlockPos getPosition() {
+						return new BlockPos((int) x, (int) y, (int) z);
+					}
+
+					@Override
+					public Vec3d getPositionVector() {
+						return new Vec3d(x, y, z);
+					}
+				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:greentrigger 1 0");
+			}
+		} else if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
+				? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
+						.getDouble("triggercolor")
+				: -1) == 2)) {
+			if (!world.isRemote && world.getMinecraftServer() != null) {
+				world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+					@Override
+					public String getName() {
+						return "";
+					}
+
+					@Override
+					public boolean canUseCommand(int permission, String command) {
+						return true;
+					}
+
+					@Override
+					public World getEntityWorld() {
+						return world;
+					}
+
+					@Override
+					public MinecraftServer getServer() {
+						return world.getMinecraftServer();
+					}
+
+					@Override
+					public boolean sendCommandFeedback() {
+						return false;
+					}
+
+					@Override
+					public BlockPos getPosition() {
+						return new BlockPos((int) x, (int) y, (int) z);
+					}
+
+					@Override
+					public Vec3d getPositionVector() {
+						return new Vec3d(x, y, z);
+					}
+				}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:redtrigger 1 0");
+			}
 		}
 		entity.getEntityData().setBoolean("trionBody", (false));
 		if ((OreDictionary.containsMatch(false, OreDictionary.getOres("worldtriggertag"),
@@ -239,6 +334,12 @@ public class MCreatorTriggerOFF extends Elementsworld_trigger_craft.ModElement {
 			if (!_stack.hasTagCompound())
 				_stack.setTagCompound(new NBTTagCompound());
 			_stack.getTagCompound().setDouble("optTrigger7", (optTrigger7));
+		}
+		{
+			ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+			if (!_stack.hasTagCompound())
+				_stack.setTagCompound(new NBTTagCompound());
+			_stack.getTagCompound().setDouble("triggercolor", (triggercolor));
 		}
 	}
 }

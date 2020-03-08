@@ -68,10 +68,6 @@ public class MCreatorTriggerCrafting extends Elementsworld_trigger_craft.ModElem
 				}
 			}));
 			this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 11, 59) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return (new ItemStack(MCreatorTriggercase.block, (int) (1)).getItem() == stack.getItem());
-				}
 			}));
 			this.customSlots.put(2, this.addSlotToContainer(new Slot(internal, 2, 47, 90) {
 			}));

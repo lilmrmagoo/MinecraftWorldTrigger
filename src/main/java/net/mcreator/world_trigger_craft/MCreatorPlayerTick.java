@@ -27,14 +27,16 @@ public class MCreatorPlayerTick extends Elementsworld_trigger_craft.ModElement {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		World world = (World) dependencies.get("world");
-		if (((entity.getEntityData().getBoolean("trionBody")) == (false))) {
-			entity.getEntityData().setDouble("triongen", ((entity.getEntityData().getDouble("triongen")) + 0.025));
-		} else if (((entity.getEntityData().getBoolean("trionBody")) == (true))) {
-			entity.getEntityData().setDouble("triongen", ((entity.getEntityData().getDouble("triongen")) + 0.003));
-		}
-		if (((entity.getEntityData().getDouble("triongen")) >= 1)) {
-			entity.getEntityData().setDouble("triongen", 0);
-			entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) + 1));
+		if (((entity.getEntityData().getDouble("trion")) < 100)) {
+			if (((entity.getEntityData().getBoolean("trionBody")) == (false))) {
+				entity.getEntityData().setDouble("triongen", ((entity.getEntityData().getDouble("triongen")) + 0.025));
+			} else if (((entity.getEntityData().getBoolean("trionBody")) == (true))) {
+				entity.getEntityData().setDouble("triongen", ((entity.getEntityData().getDouble("triongen")) + 0.003));
+			}
+			if (((entity.getEntityData().getDouble("triongen")) >= 1)) {
+				entity.getEntityData().setDouble("triongen", 0);
+				entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) + 1));
+			}
 		}
 		if ((entity.getEntityData().getBoolean("trionBody"))) {
 			if (entity instanceof EntityPlayer && !world.isRemote) {

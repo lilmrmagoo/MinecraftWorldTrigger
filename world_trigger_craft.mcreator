@@ -165,14 +165,6 @@
       "ids": {}
     },
     {
-      "name": "RaygustTrigger",
-      "type": "tool",
-      "sortid": 13,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
       "name": "TriggerCrafting",
       "type": "gui",
       "sortid": 14,
@@ -516,6 +508,142 @@
           }
         ]
       }
+    },
+    {
+      "name": "RaygustTrigger",
+      "type": "item",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "KogetsuTrigger",
+      "type": "item",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "TriggerChipKogetsu",
+      "type": "item",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "ScorpionKazamaTrigger",
+      "type": "item",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "GreenTrigger",
+      "type": "item",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "RedTrigger",
+      "type": "item",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "GreenTriggerCase",
+      "type": "item",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "RedTriggerCase",
+      "type": "item",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "ColouredTriggerCrafting",
+      "type": "procedure",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TriggerChipScorpion",
+      "type": "item",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "TriggerCaseRecipe",
+      "type": "recipe",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "TriggerCaseGreenRecipe",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "TriggerCaseRedRecipe",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "Triggercasetag",
+      "type": "tag",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "Dualattack",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -529,16 +657,24 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.triggercase.name": "Trigger Case",
-      "item.raygusttrigger.name": "Raygust Trigger",
+      "item.greentriggercase.name": "Trigger Case",
       "item.triggercircuit.name": "Trigger Circuit",
       "itemGroup.tabworldtriggertab": "World Trigger",
-      "item.blanktriggerchip.name": "Blank Trigger Chip",
-      "item.neighbourtech.name": "Neighbour Tech",
+      "item.triggerchipscorpion.name": "Trigger Chip Scorpion",
+      "item.kogetsutrigger.name": "Kogetsu Trigger",
+      "item.greentrigger.name": "Trigger",
       "item.trigger_blueprint.name": "Trigger blueprint",
+      "item.redtriggercase.name": "Trigger Case",
+      "key.mcreator.triggeron": "Trigger ON!",
+      "item.triggercase.name": "Trigger Case",
+      "item.raygusttrigger.name": "Raygust Trigger",
+      "item.blanktriggerchip.name": "Blank Trigger Chip",
+      "item.redtrigger.name": "Trigger",
+      "item.neighbourtech.name": "Neighbour Tech",
+      "item.scorpionkazamatrigger.name": "Scorpion Trigger",
       "item.triggerchipraycast.name": "Trigger Chip Raycast",
       "item.trigger.name": "Trigger",
-      "key.mcreator.triggeron": "Trigger ON!",
+      "item.triggerchipkogetsu.name": "Trigger Chip Kogetsu",
       "tile.triggerworkbench.name": "Trigger Workbench"
     }
   },

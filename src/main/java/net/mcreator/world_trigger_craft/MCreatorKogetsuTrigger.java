@@ -18,11 +18,11 @@ import net.minecraft.block.state.IBlockState;
 import com.google.common.collect.Multimap;
 
 @Elementsworld_trigger_craft.ModElement.Tag
-public class MCreatorRaygustTrigger extends Elementsworld_trigger_craft.ModElement {
-	@GameRegistry.ObjectHolder("world_trigger_craft:raygusttrigger")
+public class MCreatorKogetsuTrigger extends Elementsworld_trigger_craft.ModElement {
+	@GameRegistry.ObjectHolder("world_trigger_craft:kogetsutrigger")
 	public static final Item block = null;
-	public MCreatorRaygustTrigger(Elementsworld_trigger_craft instance) {
-		super(instance, 29);
+	public MCreatorKogetsuTrigger(Elementsworld_trigger_craft instance) {
+		super(instance, 30);
 	}
 
 	@Override
@@ -33,14 +33,14 @@ public class MCreatorRaygustTrigger extends Elementsworld_trigger_craft.ModEleme
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void registerModels(ModelRegistryEvent event) {
-		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("world_trigger_craft:raygusttrigger", "inventory"));
+		ModelLoader.setCustomModelResourceLocation(block, 0, new ModelResourceLocation("world_trigger_craft:kogetsutrigger", "inventory"));
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			setMaxDamage(2);
+			setMaxDamage(0);
 			maxStackSize = 1;
-			setUnlocalizedName("raygusttrigger");
-			setRegistryName("raygusttrigger");
+			setUnlocalizedName("kogetsutrigger");
+			setRegistryName("kogetsutrigger");
 			setCreativeTab(null);
 		}
 
@@ -51,7 +51,7 @@ public class MCreatorRaygustTrigger extends Elementsworld_trigger_craft.ModEleme
 
 		@Override
 		public int getMaxItemUseDuration(ItemStack itemstack) {
-			return 100;
+			return 75;
 		}
 
 		@Override
@@ -64,7 +64,7 @@ public class MCreatorRaygustTrigger extends Elementsworld_trigger_craft.ModEleme
 			Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(slot);
 			if (slot == EntityEquipmentSlot.MAINHAND) {
 				multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
-						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Item modifier", (double) 5, 0));
+						new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Item modifier", (double) 6, 0));
 				multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Item modifier", -2.4, 0));
 			}
 			return multimap;

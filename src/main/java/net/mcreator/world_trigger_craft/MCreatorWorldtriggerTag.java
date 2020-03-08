@@ -15,5 +15,7 @@ public class MCreatorWorldtriggerTag extends Elementsworld_trigger_craft.ModElem
 	@Override
 	public void init(FMLInitializationEvent event) {
 		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorRaygustTrigger.block, (int) (1)));
+		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorKogetsuTrigger.block, (int) (1)));
+		OreDictionary.registerOre("worldtriggertag", new ItemStack(MCreatorScorpionKazamaTrigger.block, (int) (1)));
 	}
 }

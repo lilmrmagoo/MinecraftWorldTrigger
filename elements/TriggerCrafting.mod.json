@@ -45,7 +45,7 @@
         "type": "inputslot",
         "data": {
           "inputLimit": {
-            "value": "CUSTOM:Triggercase"
+            "value": ""
           },
           "id": 1,
           "name": "Slot #1",

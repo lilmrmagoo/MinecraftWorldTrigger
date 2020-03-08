@@ -1,0 +1,20 @@
+{
+  "group": "world_trigger_craft",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01"
+  ],
+  "key": {
+    "0": {
+      "item": "world_trigger_craft:triggercase"
+    },
+    "1": {
+      "item": "minecraft:dye",
+      "data": 1
+    }
+  },
+  "result": {
+    "item": "world_trigger_craft:redtriggercase",
+    "count": 1
+  }
+}

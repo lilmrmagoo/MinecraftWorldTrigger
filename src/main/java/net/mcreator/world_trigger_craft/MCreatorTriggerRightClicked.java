@@ -1,5 +1,6 @@
 package net.mcreator.world_trigger_craft;
 
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import net.minecraft.world.World;
@@ -54,8 +55,13 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 		double optTrigger5 = 0;
 		double optTrigger6 = 0;
 		double optTrigger7 = 0;
-		if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(MCreatorTrigger.block, (int) (1)).getItem())) {
+		double triggercolor = 0;
+		if (((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(MCreatorTrigger.block, (int) (1)).getItem())
+				|| ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+						.getItem() == new ItemStack(MCreatorGreenTrigger.block, (int) (1)).getItem())
+						|| (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+								.getItem() == new ItemStack(MCreatorRedTrigger.block, (int) (1)).getItem())))) {
 			triggershape = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 					.hasTagCompound()
 							? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
@@ -101,11 +107,16 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 							? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 									.getTagCompound().getDouble("optTrigger7")
 							: -1);
-			entity.getEntityData().setBoolean("trionBody", (true));
+			triggercolor = (double) (((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.hasTagCompound()
+							? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+									.getTagCompound().getDouble("triggercolor")
+							: -1);
 			if ((((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).hasTagCompound()
 					? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY).getTagCompound()
 							.getDouble("triggerShape")
 					: -1) == 1) && ((entity.getEntityData().getDouble("trion")) >= 21))) {
+				entity.getEntityData().setBoolean("trionBody", (true));
 				if ((world_trigger_craftVariables.WorldVariables.get(world).TriggerONAnnouncement)) {
 					{
 						MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -162,6 +173,132 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 					}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:raygusttrigger 1 0");
 				}
 				entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 20));
+			} else if ((((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.hasTagCompound()
+							? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+									.getTagCompound().getDouble("triggerShape")
+							: -1) == 2)
+					&& ((entity.getEntityData().getDouble("trion")) >= 16))) {
+				entity.getEntityData().setBoolean("trionBody", (true));
+				if ((world_trigger_craftVariables.WorldVariables.get(world).TriggerONAnnouncement)) {
+					{
+						MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
+						if (mcserv != null)
+							mcserv.getPlayerList().sendMessage(
+									new TextComponentString((("<") + "" + ((entity.getDisplayName().getFormattedText())) + "" + ("> Trigger ON!"))));
+					}
+				}
+				{
+					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					$_dependencies.put("entity", entity);
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					MCreatorSubTriggerSummon.executeProcedure($_dependencies);
+				}
+				if (!world.isRemote && world.getMinecraftServer() != null) {
+					world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+						@Override
+						public String getName() {
+							return "";
+						}
+
+						@Override
+						public boolean canUseCommand(int permission, String command) {
+							return true;
+						}
+
+						@Override
+						public World getEntityWorld() {
+							return world;
+						}
+
+						@Override
+						public MinecraftServer getServer() {
+							return world.getMinecraftServer();
+						}
+
+						@Override
+						public boolean sendCommandFeedback() {
+							return false;
+						}
+
+						@Override
+						public BlockPos getPosition() {
+							return new BlockPos((int) x, (int) y, (int) z);
+						}
+
+						@Override
+						public Vec3d getPositionVector() {
+							return new Vec3d(x, y, z);
+						}
+					}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:kogetsutrigger 1 0");
+				}
+				entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 15));
+			} else if ((((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+					.hasTagCompound()
+							? ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+									.getTagCompound().getDouble("triggerShape")
+							: -1) == 3)
+					&& ((entity.getEntityData().getDouble("trion")) >= 11))) {
+				entity.getEntityData().setBoolean("trionBody", (true));
+				if ((world_trigger_craftVariables.WorldVariables.get(world).TriggerONAnnouncement)) {
+					{
+						MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
+						if (mcserv != null)
+							mcserv.getPlayerList().sendMessage(
+									new TextComponentString((("<") + "" + ((entity.getDisplayName().getFormattedText())) + "" + ("> Trigger ON!"))));
+					}
+				}
+				{
+					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+					$_dependencies.put("entity", entity);
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
+					MCreatorSubTriggerSummon.executeProcedure($_dependencies);
+				}
+				if (!world.isRemote && world.getMinecraftServer() != null) {
+					world.getMinecraftServer().getCommandManager().executeCommand(new ICommandSender() {
+						@Override
+						public String getName() {
+							return "";
+						}
+
+						@Override
+						public boolean canUseCommand(int permission, String command) {
+							return true;
+						}
+
+						@Override
+						public World getEntityWorld() {
+							return world;
+						}
+
+						@Override
+						public MinecraftServer getServer() {
+							return world.getMinecraftServer();
+						}
+
+						@Override
+						public boolean sendCommandFeedback() {
+							return false;
+						}
+
+						@Override
+						public BlockPos getPosition() {
+							return new BlockPos((int) x, (int) y, (int) z);
+						}
+
+						@Override
+						public Vec3d getPositionVector() {
+							return new Vec3d(x, y, z);
+						}
+					}, "replaceitem entity @p slot.weapon.mainhand world_trigger_craft:scorpionkazamatrigger 1 0");
+				}
+				entity.getEntityData().setDouble("trion", ((entity.getEntityData().getDouble("trion")) - 10));
 			}
 			{
 				ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
@@ -217,8 +354,14 @@ public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.Mod
 					_stack.setTagCompound(new NBTTagCompound());
 				_stack.getTagCompound().setDouble("optTrigger7", (optTrigger7));
 			}
-		} else if ((((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)
-				.getItem() == new ItemStack(MCreatorRaygustTrigger.block, (int) (1)).getItem())) {
+			{
+				ItemStack _stack = ((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+				if (!_stack.hasTagCompound())
+					_stack.setTagCompound(new NBTTagCompound());
+				_stack.getTagCompound().setDouble("triggercolor", (triggercolor));
+			}
+		} else if ((OreDictionary.containsMatch(false, OreDictionary.getOres("worldtriggertag"),
+				((entity instanceof EntityLivingBase) ? ((EntityLivingBase) entity).getHeldItemMainhand() : ItemStack.EMPTY)))) {
 			{
 				java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 				$_dependencies.put("entity", entity);

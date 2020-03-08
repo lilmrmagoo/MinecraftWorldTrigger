@@ -5,18 +5,18 @@
     "type": "Items",
     "items": [
       {
-        "value": "CUSTOM:RaygustTrigger"
+        "value": "CUSTOM:Triggercase"
       },
       {
-        "value": "CUSTOM:KogetsuTrigger"
+        "value": "CUSTOM:GreenTriggerCase"
       },
       {
-        "value": "CUSTOM:ScorpionKazamaTrigger"
+        "value": "CUSTOM:RedTriggerCase"
       }
     ],
     "blocks": [],
     "functions": [],
-    "name": "worldtriggertag",
+    "name": "triggercasetag",
     "namespace": "forge"
   }
 }

@@ -11,14 +11,14 @@ import java.util.function.Supplier;
 import java.util.Map;
 
 @Elementsworld_trigger_craft.ModElement.Tag
-public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_craft.ModElement {
-	public MCreatorSubTriggerCraftingAssemble(Elementsworld_trigger_craft instance) {
-		super(instance, 15);
+public class MCreatorColouredTriggerCrafting extends Elementsworld_trigger_craft.ModElement {
+	public MCreatorColouredTriggerCrafting(Elementsworld_trigger_craft instance) {
+		super(instance, 38);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
-			System.err.println("Failed to load dependency entity for procedure MCreatorSubTriggerCraftingAssemble!");
+			System.err.println("Failed to load dependency entity for procedure MCreatorColouredTriggerCrafting!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
@@ -35,7 +35,17 @@ public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_cr
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (3))).getItem() == new ItemStack(MCreatorTriggerChipRaycast.block, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == new ItemStack(MCreatorTriggercase.block, (int) (1)).getItem())) {
+			if (entity instanceof EntityPlayerMP) {
+				Container _current = ((EntityPlayerMP) entity).openContainer;
+				if (_current instanceof Supplier) {
+					Object invobj = ((Supplier) _current).get();
+					if (invobj instanceof Map) {
+						((Slot) ((Map) invobj).get((int) (0))).putStack(new ItemStack(MCreatorTrigger.block, (int) (1)));
+						_current.detectAndSendChanges();
+					}
+				}
+			}
 			{
 				ItemStack _stack = (new Object() {
 					public ItemStack getItemStack(int sltid) {
@@ -53,7 +63,7 @@ public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_cr
 				}.getItemStack((int) (0)));
 				if (!_stack.hasTagCompound())
 					_stack.setTagCompound(new NBTTagCompound());
-				_stack.getTagCompound().setDouble("subtriggerShape", 1);
+				_stack.getTagCompound().setDouble("triggercolor", 0);
 			}
 		} else if (((new Object() {
 			public ItemStack getItemStack(int sltid) {
@@ -68,7 +78,17 @@ public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_cr
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (3))).getItem() == new ItemStack(MCreatorTriggerChipKogetsu.block, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == new ItemStack(MCreatorGreenTriggerCase.block, (int) (1)).getItem())) {
+			if (entity instanceof EntityPlayerMP) {
+				Container _current = ((EntityPlayerMP) entity).openContainer;
+				if (_current instanceof Supplier) {
+					Object invobj = ((Supplier) _current).get();
+					if (invobj instanceof Map) {
+						((Slot) ((Map) invobj).get((int) (0))).putStack(new ItemStack(MCreatorGreenTrigger.block, (int) (1)));
+						_current.detectAndSendChanges();
+					}
+				}
+			}
 			{
 				ItemStack _stack = (new Object() {
 					public ItemStack getItemStack(int sltid) {
@@ -86,7 +106,7 @@ public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_cr
 				}.getItemStack((int) (0)));
 				if (!_stack.hasTagCompound())
 					_stack.setTagCompound(new NBTTagCompound());
-				_stack.getTagCompound().setDouble("subtriggerShape", 2);
+				_stack.getTagCompound().setDouble("triggercolor", 1);
 			}
 		} else if (((new Object() {
 			public ItemStack getItemStack(int sltid) {
@@ -101,7 +121,17 @@ public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_cr
 				}
 				return ItemStack.EMPTY;
 			}
-		}.getItemStack((int) (3))).getItem() == new ItemStack(MCreatorTriggerChipScorpion.block, (int) (1)).getItem())) {
+		}.getItemStack((int) (1))).getItem() == new ItemStack(MCreatorRedTriggerCase.block, (int) (1)).getItem())) {
+			if (entity instanceof EntityPlayerMP) {
+				Container _current = ((EntityPlayerMP) entity).openContainer;
+				if (_current instanceof Supplier) {
+					Object invobj = ((Supplier) _current).get();
+					if (invobj instanceof Map) {
+						((Slot) ((Map) invobj).get((int) (0))).putStack(new ItemStack(MCreatorRedTrigger.block, (int) (1)));
+						_current.detectAndSendChanges();
+					}
+				}
+			}
 			{
 				ItemStack _stack = (new Object() {
 					public ItemStack getItemStack(int sltid) {
@@ -119,7 +149,7 @@ public class MCreatorSubTriggerCraftingAssemble extends Elementsworld_trigger_cr
 				}.getItemStack((int) (0)));
 				if (!_stack.hasTagCompound())
 					_stack.setTagCompound(new NBTTagCompound());
-				_stack.getTagCompound().setDouble("subtriggerShape", 3);
+				_stack.getTagCompound().setDouble("triggercolor", 2);
 			}
 		}
 	}
