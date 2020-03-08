@@ -5,7 +5,7 @@ import net.minecraft.entity.Entity;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorPlayerRespawns extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorPlayerRespawns(Elementsworld_trigger_craft instance) {
-		super(instance, 25);
+		super(instance, 33);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

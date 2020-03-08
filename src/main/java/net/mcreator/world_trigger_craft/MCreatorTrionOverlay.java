@@ -16,7 +16,7 @@ import net.minecraft.client.Minecraft;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorTrionOverlay extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorTrionOverlay(Elementsworld_trigger_craft instance) {
-		super(instance, 20);
+		super(instance, 27);
 	}
 
 	@Override

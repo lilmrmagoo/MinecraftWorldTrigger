@@ -17,7 +17,7 @@ public class MCreatorTriggerChipRaycast extends Elementsworld_trigger_craft.ModE
 	@GameRegistry.ObjectHolder("world_trigger_craft:triggerchipraycast")
 	public static final Item block = null;
 	public MCreatorTriggerChipRaycast(Elementsworld_trigger_craft instance) {
-		super(instance, 10);
+		super(instance, 8);
 	}
 
 	@Override

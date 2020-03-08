@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorBailout extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorBailout(Elementsworld_trigger_craft instance) {
-		super(instance, 23);
+		super(instance, 30);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

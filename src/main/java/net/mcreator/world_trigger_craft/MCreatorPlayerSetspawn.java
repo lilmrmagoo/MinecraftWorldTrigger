@@ -12,7 +12,7 @@ import net.minecraft.entity.Entity;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorPlayerSetspawn extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorPlayerSetspawn(Elementsworld_trigger_craft instance) {
-		super(instance, 24);
+		super(instance, 32);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

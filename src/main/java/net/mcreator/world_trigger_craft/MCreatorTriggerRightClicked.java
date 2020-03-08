@@ -17,7 +17,7 @@ import net.minecraft.command.ICommandSender;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorTriggerRightClicked extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorTriggerRightClicked(Elementsworld_trigger_craft instance) {
-		super(instance, 12);
+		super(instance, 18);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

@@ -17,7 +17,7 @@ public class MCreatorTrigger extends Elementsworld_trigger_craft.ModElement {
 	@GameRegistry.ObjectHolder("world_trigger_craft:trigger")
 	public static final Item block = null;
 	public MCreatorTrigger(Elementsworld_trigger_craft instance) {
-		super(instance, 12);
+		super(instance, 19);
 	}
 
 	@Override

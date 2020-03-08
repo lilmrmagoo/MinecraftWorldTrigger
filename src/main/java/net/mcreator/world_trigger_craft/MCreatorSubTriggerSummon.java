@@ -15,7 +15,7 @@ import net.minecraft.command.ICommandSender;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorSubTriggerSummon extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorSubTriggerSummon(Elementsworld_trigger_craft instance) {
-		super(instance, 12);
+		super(instance, 17);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

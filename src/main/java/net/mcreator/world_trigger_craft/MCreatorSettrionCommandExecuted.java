@@ -7,7 +7,7 @@ import java.util.HashMap;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorSettrionCommandExecuted extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorSettrionCommandExecuted(Elementsworld_trigger_craft instance) {
-		super(instance, 27);
+		super(instance, 35);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

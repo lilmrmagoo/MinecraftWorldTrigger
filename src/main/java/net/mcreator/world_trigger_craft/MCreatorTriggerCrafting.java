@@ -36,7 +36,7 @@ public class MCreatorTriggerCrafting extends Elementsworld_trigger_craft.ModElem
 	public static int GUIID = 1;
 	public static HashMap guistate = new HashMap();
 	public MCreatorTriggerCrafting(Elementsworld_trigger_craft instance) {
-		super(instance, 14);
+		super(instance, 20);
 	}
 
 	@Override

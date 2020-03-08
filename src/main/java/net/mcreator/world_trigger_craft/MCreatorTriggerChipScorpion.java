@@ -17,7 +17,7 @@ public class MCreatorTriggerChipScorpion extends Elementsworld_trigger_craft.Mod
 	@GameRegistry.ObjectHolder("world_trigger_craft:triggerchipscorpion")
 	public static final Item block = null;
 	public MCreatorTriggerChipScorpion(Elementsworld_trigger_craft instance) {
-		super(instance, 39);
+		super(instance, 10);
 	}
 
 	@Override

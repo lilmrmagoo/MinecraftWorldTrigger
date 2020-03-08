@@ -24,7 +24,7 @@ public class MCreatorScorpionKazamaTrigger extends Elementsworld_trigger_craft.M
 	@GameRegistry.ObjectHolder("world_trigger_craft:scorpionkazamatrigger")
 	public static final Item block = null;
 	public MCreatorScorpionKazamaTrigger(Elementsworld_trigger_craft instance) {
-		super(instance, 32);
+		super(instance, 40);
 	}
 
 	@Override

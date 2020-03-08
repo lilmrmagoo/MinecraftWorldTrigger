@@ -17,7 +17,7 @@ public class MCreatorTriggerChipKogetsu extends Elementsworld_trigger_craft.ModE
 	@GameRegistry.ObjectHolder("world_trigger_craft:triggerchipkogetsu")
 	public static final Item block = null;
 	public MCreatorTriggerChipKogetsu(Elementsworld_trigger_craft instance) {
-		super(instance, 31);
+		super(instance, 9);
 	}
 
 	@Override

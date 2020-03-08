@@ -17,7 +17,7 @@ public class MCreatorBlankTriggerChip extends Elementsworld_trigger_craft.ModEle
 	@GameRegistry.ObjectHolder("world_trigger_craft:blanktriggerchip")
 	public static final Item block = null;
 	public MCreatorBlankTriggerChip(Elementsworld_trigger_craft instance) {
-		super(instance, 8);
+		super(instance, 7);
 	}
 
 	@Override

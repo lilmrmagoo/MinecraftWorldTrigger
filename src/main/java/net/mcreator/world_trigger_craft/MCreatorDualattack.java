@@ -7,7 +7,7 @@ import net.minecraft.entity.Entity;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorDualattack extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorDualattack(Elementsworld_trigger_craft instance) {
-		super(instance, 44);
+		super(instance, 48);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

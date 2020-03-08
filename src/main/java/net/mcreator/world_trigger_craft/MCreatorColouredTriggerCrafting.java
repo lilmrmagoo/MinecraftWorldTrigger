@@ -13,7 +13,7 @@ import java.util.Map;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorColouredTriggerCrafting extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorColouredTriggerCrafting(Elementsworld_trigger_craft instance) {
-		super(instance, 38);
+		super(instance, 43);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

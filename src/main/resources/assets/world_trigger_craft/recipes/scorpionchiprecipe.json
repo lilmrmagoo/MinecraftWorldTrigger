@@ -1,0 +1,22 @@
+{
+  "group": "world_trigger_craft",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "world_trigger_craft:blanktriggerchip"
+    },
+    "1": {
+      "item": "minecraft:stone_sword"
+    },
+    "2": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "world_trigger_craft:triggerchipscorpion",
+    "count": 1
+  }
+}

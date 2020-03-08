@@ -39,7 +39,7 @@ public class MCreatorTriggerWorkbench extends Elementsworld_trigger_craft.ModEle
 	@GameRegistry.ObjectHolder("world_trigger_craft:triggerworkbench")
 	public static final Block block = null;
 	public MCreatorTriggerWorkbench(Elementsworld_trigger_craft instance) {
-		super(instance, 14);
+		super(instance, 11);
 	}
 
 	@Override

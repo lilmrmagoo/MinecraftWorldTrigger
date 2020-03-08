@@ -1,0 +1,23 @@
+{
+  "group": "world_trigger_craft",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0 2",
+    " 4 "
+  ],
+  "key": {
+    "0": {
+      "item": "world_trigger_craft:blanktriggerchip"
+    },
+    "2": {
+      "item": "minecraft:iron_ingot"
+    },
+    "4": {
+      "item": "minecraft:iron_sword"
+    }
+  },
+  "result": {
+    "item": "world_trigger_craft:triggerchipkogetsu",
+    "count": 1
+  }
+}

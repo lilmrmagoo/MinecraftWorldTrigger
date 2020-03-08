@@ -22,7 +22,7 @@ public class MCreatorRaygustTrigger extends Elementsworld_trigger_craft.ModEleme
 	@GameRegistry.ObjectHolder("world_trigger_craft:raygusttrigger")
 	public static final Item block = null;
 	public MCreatorRaygustTrigger(Elementsworld_trigger_craft instance) {
-		super(instance, 29);
+		super(instance, 38);
 	}
 
 	@Override

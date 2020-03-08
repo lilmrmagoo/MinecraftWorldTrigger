@@ -17,9 +17,9 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 @Elementsworld_trigger_craft.ModElement.Tag
-public class MCreatorSettrion extends Elementsworld_trigger_craft.ModElement {
-	public MCreatorSettrion(Elementsworld_trigger_craft instance) {
-		super(instance, 36);
+public class MCreatorTriggercommand extends Elementsworld_trigger_craft.ModElement {
+	public MCreatorTriggercommand(Elementsworld_trigger_craft instance) {
+		super(instance, 51);
 	}
 
 	@Override
@@ -54,12 +54,12 @@ public class MCreatorSettrion extends Elementsworld_trigger_craft.ModElement {
 
 		@Override
 		public String getName() {
-			return "setTrion";
+			return "AnnounceTrigger";
 		}
 
 		@Override
 		public String getUsage(ICommandSender var1) {
-			return "/setTrion [<arguments>]";
+			return "/AnnounceTrigger [<arguments>]";
 		}
 
 		@Override
@@ -80,7 +80,8 @@ public class MCreatorSettrion extends Elementsworld_trigger_craft.ModElement {
 					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
 					$_dependencies.put("entity", entity);
 					$_dependencies.put("cmdparams", cmdparams);
-					MCreatorSettrionCommandExecuted.executeProcedure($_dependencies);
+					$_dependencies.put("world", world);
+					MCreatorTriggercommandCommandExecuted.executeProcedure($_dependencies);
 				}
 			}
 		}

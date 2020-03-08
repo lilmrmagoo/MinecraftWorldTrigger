@@ -17,7 +17,7 @@ public class MCreatorTriggercase extends Elementsworld_trigger_craft.ModElement 
 	@GameRegistry.ObjectHolder("world_trigger_craft:triggercase")
 	public static final Item block = null;
 	public MCreatorTriggercase(Elementsworld_trigger_craft instance) {
-		super(instance, 4);
+		super(instance, 3);
 	}
 
 	@Override

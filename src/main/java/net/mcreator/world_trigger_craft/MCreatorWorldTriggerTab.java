@@ -10,7 +10,7 @@ import net.minecraft.creativetab.CreativeTabs;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorWorldTriggerTab extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorWorldTriggerTab(Elementsworld_trigger_craft instance) {
-		super(instance, 5);
+		super(instance, 13);
 	}
 
 	@Override

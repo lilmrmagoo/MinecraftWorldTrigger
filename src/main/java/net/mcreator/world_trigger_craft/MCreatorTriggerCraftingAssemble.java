@@ -15,7 +15,7 @@ import java.util.Map;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorTriggerCraftingAssemble extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorTriggerCraftingAssemble(Elementsworld_trigger_craft instance) {
-		super(instance, 15);
+		super(instance, 23);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

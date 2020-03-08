@@ -22,7 +22,7 @@ public class MCreatorKogetsuTrigger extends Elementsworld_trigger_craft.ModEleme
 	@GameRegistry.ObjectHolder("world_trigger_craft:kogetsutrigger")
 	public static final Item block = null;
 	public MCreatorKogetsuTrigger(Elementsworld_trigger_craft instance) {
-		super(instance, 30);
+		super(instance, 39);
 	}
 
 	@Override

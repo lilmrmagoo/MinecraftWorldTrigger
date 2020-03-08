@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorTrionDamage extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorTrionDamage(Elementsworld_trigger_craft instance) {
-		super(instance, 22);
+		super(instance, 29);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

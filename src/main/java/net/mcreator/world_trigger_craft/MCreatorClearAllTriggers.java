@@ -9,7 +9,7 @@ import net.minecraft.command.ICommandSender;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorClearAllTriggers extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorClearAllTriggers(Elementsworld_trigger_craft instance) {
-		super(instance, 28);
+		super(instance, 37);
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {

@@ -26,7 +26,7 @@ import net.minecraft.client.Minecraft;
 public class MCreatorTriggerON extends Elementsworld_trigger_craft.ModElement {
 	private KeyBinding keys;
 	public MCreatorTriggerON(Elementsworld_trigger_craft instance) {
-		super(instance, 17);
+		super(instance, 24);
 	}
 
 	@Override

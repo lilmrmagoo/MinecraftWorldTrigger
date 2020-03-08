@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 @Elementsworld_trigger_craft.ModElement.Tag
 public class MCreatorTriggercasetag extends Elementsworld_trigger_craft.ModElement {
 	public MCreatorTriggercasetag(Elementsworld_trigger_craft instance) {
-		super(instance, 43);
+		super(instance, 47);
 	}
 
 	@Override
